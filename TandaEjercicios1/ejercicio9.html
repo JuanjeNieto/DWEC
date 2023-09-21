@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+<body>
+    <div>
+        <label for="cantidadEU">Proporciona tu cantidad en EUROS</label>
+        <input type="number" id="cantidadEU">
+
+        <button id="euroaUSD">Cantidad en USD</button>
+    </div>
+    <div id="resultadoUSD"></div>
+    <br>
+    <div>
+        <label for="cantidadUSD">Proporciona tu cantidad en USD</label>
+        <input type="number" id="cantidadUSD">
+
+        <button id="USDaeuro">Cantidad en EUROS</button>
+    </div>
+    <div id="resultadoEU"></div>
+
+    <script>
+        document.getElementById("euroaUSD").addEventListener("click", function(){
+            var cantidadEU = parseFloat(document.getElementById("cantidadEU").value);
+
+            var resultadoUSD = document.getElementById("resultadoUSD");
+
+            resultadoUSD.textContent = "El cambio a USD es: " + (cantidadEU*1.07);
+        })
+
+        document.getElementById("USDaeuro").addEventListener("click", function(){
+            var cantidadUSD = parseFloat(document.getElementById("cantidadUSD").value);
+
+            var resultadoEU = document.getElementById("resultadoEU");
+
+            resultadoEU.textContent = "El cambio a EU es: " + (cantidadUSD/1.07);
+        })
+
+    </script>
+</body>
+</html>
