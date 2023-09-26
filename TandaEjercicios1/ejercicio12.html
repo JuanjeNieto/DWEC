@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var letra = prompt("Introduce una letra")
+
+    function esVocal(char) {
+        var vocales = ['a', 'e', 'i', 'o', 'u'];
+        if (vocales.includes(char.toLowerCase())) {
+            console.log("Es una vocal");
+        } else {
+            console.log("No es una vocal");
+        }
+    }
+
+    esVocal(letra);
+</script>
+</html>
