@@ -15,12 +15,12 @@
     </div>
     <br>
     <div>
-        <label for="num1">Introduce un numero</label>
+        <label for="num2">Introduce un numero</label>
         <br>
-        <input type="number" id="num1">
+        <input type="number" id="num2">
     </div>
     <br>
-    <button id="cortar"></button>
+    <button id="cortar">Mostrar</button>
 
     <script>
         document.getElementById("cortar").addEventListener("click", function(){
@@ -30,8 +30,13 @@
 
             const array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 
-            
-        })
+            var numerosFiltrados = array.filter(function(numero) {
+                return numero >= num1 && numero <= num2;
+            });
+
+            document.write ("Números entre " + num1 + " y " + num2 + ": " + numerosFiltrados.join(", "));
+        });
+        
     </script>
 </body>
 </html>
