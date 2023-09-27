@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej14</title>
+</head>
+<body>
+    <div>
+        <label for="texto">Escriba su texto</label>
+        <br>
+        <input type="text" id="texto">
+    </div>
+    <button id="calcular">Calcular longitud</button>
+    <script>
+        document.getElementById("calcular").addEventListener("click", function(){
+            var texto = document.getElementById("texto").value
+            const longitud = texto.length;
+            document.write("la longitud es " + longitud)
+        })
+    </script>
+</body>
+</html>
