@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+var personas = [];
+
+function agregarPersona() {
+  var nombre = prompt("Ingrese el nombre de la persona:");
+  var calificacion = parseFloat(prompt("Ingrese la calificación de la persona:"));
+
+  var persona = {
+    nombre: nombre,
+    calificacion: calificacion
+  };
+
+  personas.push(persona);
+}
+
+for (var i = 0; i < 3; i++) {
+  agregarPersona();
+}
+
+for (var i = 0; i < personas.length; i++) {
+  document.write("Persona " + (i + 1) + ": ");
+  document.write("Nombre: " + personas[i].nombre + " ");
+  document.write("Calificacion: " + personas[i].calificacion + "<br><br>");
+}
+    </script>
+</body>
+</html>
