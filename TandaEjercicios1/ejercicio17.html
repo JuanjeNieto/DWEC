@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const directorio = {
+            "Juan Jesús": "juanje@gmail.com" ,
+            "Mario": "mariobros@gmail.com" ,
+            "Luffy": "joyboy@gearfive.com",
+            "Usopp": null ,
+            "Haizaki": "pedroporro@gmail.en",
+        }
+
+        var nombre = prompt("Ingrese un nombre")
+
+        var correo = directorio[nombre]
+
+        if (correo) {
+            document.write("El correo de " + nombre + " es " + correo)
+        } else {
+            document.write("El usuario "+nombre+" no tiene correo")
+        }
+    </script>
+</body>
+</html>
