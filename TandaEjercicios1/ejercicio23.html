@@ -7,9 +7,54 @@
 </head>
 <body>
     <script>
-            var personas = {};
+        var personas = [];
 
+        while (true) {
+            var nombre = prompt("Ingrese el nombre de la persona o escriba 'terminar' para finalizar:");
             
+
+            if (nombre.toLowerCase() === "terminar") {
+                break;
+            }
+
+            //pregunta cuantas notas va a ingresar para el bucle for
+
+            var numNotas = parseInt(prompt("Cuántas notas va a ingresar para " + nombre + "?"));
+
+            if (isNaN(numNotas) || numNotas <= 0) {
+                alert("Ingrese un número válido de notas.");
+                continue;
+            }
+
+            var notas = [];
+            for (var i = 0; i < numNotas; i++) {
+                var nota = parseFloat(prompt("Ingrese la nota " + (i + 1) + " de " + nombre + ":"));
+
+                if (isNaN(nota)) {
+                    alert("La nota ingresada no es válida. Intente de nuevo.");
+                    i--;
+                } else {
+                    notas.push(nota);
+                }
+            }
+
+
+        }
+        console.log(personas);
+        for (let i = 0; i < personas.length; i++) {
+            var persona = personas[i];
+            document.write("Nombre: " + persona.nombre + "<br>");
+            document.write("Notas: " + persona.notas.join(', ') + "<br>");
+            document.write("Media: " + persona.promedio.toFixed(2) + "<br>");
+            document.write("<br>");
+        }
+        function calcularPromedio(notas) {
+            var suma = 0;
+            for (var i = 0; i < notas.length; i++) {
+                suma += notas[i];
+            }
+            return suma / notas.length;
+        }
             
     </script>
 </body>
