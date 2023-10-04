@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercico 23</title>
+    <title>Ejercico 24</title>
 </head>
 <body>
     <script>
@@ -40,6 +40,10 @@
             personas.push([nombre, notas, promedio]);
         }
 
+        personas.sort(function (a, b) {
+            return b[2] - a[2];
+        });
+        
         for (let i = 0; i < personas.length; i++) {
             var persona = personas[i];
             var nombre = persona[0];
