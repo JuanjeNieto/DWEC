@@ -8,19 +8,31 @@
 <body>
     <script>
         var numSecreto = Math.floor(Math.random() * 100) + 1;
-
-        var numEntrada = parseInt(prompt("Introduce un num"));
-
-        for (let i = 1; i <= 5; i++) {
-           if (numEntrada == numSecreto) {
-            document.write("ganaste!")
-            break;
-           }
-           else{
-                    
-           }
-            
+        var intentos = 5;
+    
+        for (let i = 1; i <= intentos; i++) {
+            var numEntrada = parseInt(prompt("Introduce un número entre 1 y 100 (intentos restantes: " + (intentos - i + 1) + ")"));
+    
+            if (isNaN(numEntrada) && (numEntrada > 100) && (numEntrada < 1)) {
+                alert("Por favor, introduce un número válido.");
+                i--;
+                continue;
+            }
+    
+            if (numEntrada === numSecreto) {
+                document.write("¡Ganaste!");
+                break;
+            } else if (numEntrada < numSecreto) {
+                alert("El número secreto es mayor.");
+            } else {
+                alert("El número secreto es menor.");
+            }
+    
+            if (i === intentos) {
+                document.write("Perdiste! El número secreto era " + numSecreto + ".");
+            }
         }
     </script>
+    
 </body>
 </html>
