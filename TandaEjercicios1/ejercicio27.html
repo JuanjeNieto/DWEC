@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function esPalindromo(texto){
+         
+            var textoLimpio = texto.replace(/ /g, '').toLowerCase()
+            var textoInvertido = textoLimpio.split('').reverse().join('');
+
+            return texto === textoInvertido; 
+        }
+
+        var texto = prompt("Introduce un texto");
+        document.write(esPalindromo(texto));
+
+    </script>
+</body>
+</html>

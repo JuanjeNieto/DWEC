@@ -13,14 +13,14 @@
         for (let i = 1; i <= intentos; i++) {
             var numEntrada = parseInt(prompt("Introduce un número entre 1 y 100 (intentos restantes: " + (intentos - i + 1) + ")"));
     
-            if (isNaN(numEntrada) && (numEntrada > 100) && (numEntrada < 1)) {
+            if (isNaN(numEntrada) || numEntrada < 1 || numEntrada > 100) {
                 alert("Por favor, introduce un número válido.");
                 i--;
                 continue;
             }
     
             if (numEntrada === numSecreto) {
-                document.write("¡Ganaste!");
+                document.write("Has ganaooo primooo");
                 break;
             } else if (numEntrada < numSecreto) {
                 alert("El número secreto es mayor.");

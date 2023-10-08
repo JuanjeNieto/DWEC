@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <script>
+        function pintaFilas(numFilas, numColumnas) {
+            var table = document.createElement("table");
+            table.border = "1";
+    
+            for (let i = 0; i < numFilas; i++) {
+                var row = table.insertRow();
+    
+                for (let j = 0; j < numColumnas; j++) {
+                    var cell = row.insertCell();
+                    cell.innerHTML = "hola :)";
+                }
+            }
+    
+            document.body.appendChild(table);
+        }
+    
+        var numFilas = parseInt(prompt("Introduce el número de filas"));
+        var numColumnas = parseInt(prompt("Introduce el número de columnas"));
+    
+        pintaFilas(numFilas, numColumnas);
+    </script>
+    
+</body>
+</html>
