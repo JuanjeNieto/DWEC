@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var personas = [];
+
+        while (true) {
+            var nombre = prompt("Ingrese el nombre de la persona o escriba 'terminar' para finalizar:");
+
+            if (nombre.toLowerCase() === "terminar") {
+                break;
+            }
+
+            // pregunta cuantas notas va a ingresar para el bucle for
+            var numNotas = parseInt(prompt("Cuántas notas va a ingresar para " + nombre + "?"));
+
+            if (isNaN(numNotas) || numNotas <= 0) {
+                alert("Ingrese un número válido de notas.");
+                continue;
+            }
+
+            var notas = [];
+            for (var i = 0; i < numNotas; i++) {
+                var nota = parseFloat(prompt("Ingrese la nota " + (i + 1) + " de " + nombre + ":"));
+
+                if (isNaN(nota)) {
+                    alert("La nota ingresada no es válida. Intente de nuevo.");
+                    i--;
+                } else {
+                    notas.push(nota);
+                }
+            }
+            var promedio = calcularPromedio(notas);
+
+            personas.push([nombre, notas, promedio]);
+        }
+
+        personas.sort(function (a, b) {
+            return b[2] - a[2];
+        });
+        
+        for (let i = 0; i < personas.length; i++) {
+            var persona = personas[i];
+            var nombre = persona[0];
+            var notas = persona[1];
+            var promedio = persona[2];
+
+            document.write("Nombre: " + nombre + "<br>");
+            document.write("Notas: " + notas.join(', ') + "<br>");
+            document.write("Media: " + promedio.toFixed(2) + "<br>");
+            document.write("<br>");
+        }
+
+        function calcularPromedio(notas) {
+            var suma = 0;
+            for (var i = 0; i < notas.length; i++) {
+                suma += notas[i];
+            }
+            return suma / notas.length;
+        }
+    </script>
+</body>
+</html>
