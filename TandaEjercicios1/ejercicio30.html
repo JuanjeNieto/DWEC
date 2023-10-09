@@ -8,18 +8,52 @@
 </head>
 <body>
     <script>
-        var elegir = parseInt(prompt("Introduce (Numero) para la bebida que quieras. <br> 1. Coca-Cola. <br>2.  Pepsi. <br> 3. SE7EN UP"))
-        var bebida = "";
-        switch (elegir) {
-            case 1:
-                bebida === "Coca-Cola"
-                break;
-            case 2:
-                bebida
-                break;
-            default:
-                break;
+       
+        const bebidasDisponibles = [
+        { nombre: "Fanta", precio: 1.0 },
+        { nombre: "Pepsi", precio: 1.0 },
+        { nombre: "7Up", precio: 1.0 },
+        ];
+
+        let saldoUsuario = 0;
+
+        function mostrarMenu() {
+        console.log("Bebidas disponibles:");
+        for (const bebida of bebidasDisponibles) {
+            console.log(`${bebida.nombre} - €${bebida.precio.toFixed(2)}`);
         }
+        }
+        function seleccionarBebida() {
+        const bebidaSeleccionada = prompt("Por favor, elige una bebida (Fanta, Pepsi o 7Up):").toLowerCase();
+
+        const bebida = bebidasDisponibles.find((b) => b.nombre.toLowerCase() === bebidaSeleccionada);
+
+        if (bebida) {
+            const costo = bebida.precio;
+            console.log(`Has seleccionado ${bebida.nombre}. El costo es €${costo.toFixed(2)}.`);
+
+            
+            while (saldoUsuario < costo) {
+            const moneda = parseFloat(prompt("Por favor, ingresa una moneda (10, 20, 50 cent o 1 euro):"));
+            if ([10, 20, 50, 100].includes(moneda)) {
+                saldoUsuario += moneda / 100;
+                console.log(`Has ingresado €${(moneda / 100).toFixed(2)}. Saldo actual: €${saldoUsuario.toFixed(2)}.`);
+            } else {
+                console.log("Moneda no válida. Solo se aceptan monedas de 10, 20, 50 cent o 1 euro.");
+            }
+            }
+
+            const cambio = saldoUsuario - costo;
+            console.log(`Por favor, toma tu ${bebida.nombre}. Tu cambio es €${cambio.toFixed(2)}. ¡Disfruta!`);
+        } else {
+            console.log("Bebida no válida. Por favor, elige una bebida disponible.");
+        }
+        }
+
+       
+        mostrarMenu();
+        seleccionarBebida();
+
     </script>
 </body>
 </html>
