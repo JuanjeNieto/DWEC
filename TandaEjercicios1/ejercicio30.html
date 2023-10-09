@@ -9,6 +9,7 @@
 <body>
     <script>
        
+
         const bebidasDisponibles = [
         { nombre: "Fanta", precio: 1.0 },
         { nombre: "Pepsi", precio: 1.0 },
@@ -32,7 +33,6 @@
             const costo = bebida.precio;
             console.log(`Has seleccionado ${bebida.nombre}. El costo es €${costo.toFixed(2)}.`);
 
-            
             while (saldoUsuario < costo) {
             const moneda = parseFloat(prompt("Por favor, ingresa una moneda (10, 20, 50 cent o 1 euro):"));
             if ([10, 20, 50, 100].includes(moneda)) {
@@ -50,7 +50,6 @@
         }
         }
 
-       
         mostrarMenu();
         seleccionarBebida();
 
