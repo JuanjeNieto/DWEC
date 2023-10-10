@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHORCADO
+    </title>
+</head>
+<body>
+    <script>
+        const palabras = ["Agua", "Piedra", "Java", "Programar", "Pirata"," Datos", "Escuchar", "Cliente"," Servidor", "Ahorcado", "GitHub"," Manzanilla", "Manga", "Pato", "Meme", "Variable", "Constante", "Array", "Cadena"," Objeto", "Angel", "Martes", "Gafas", "Bigote", "Montaña", "Arbusto"]
+
+        function jugarAhorcado(palabra) {
+            
+            var vidas = 8;
+            var adivinadas = [];
+            var noAdivinadas = [];
+            var palabraOculta = Array(palabra.length).fill("-");
+
+            while (vidas > 0) {
+                var letra = prompt(`Introduce una letra: \nPalabra: ${palabraOculta.join(" ")} \nVidas: ${vidas} \nLetras dichas que no están: ${noAdivinadas.join(", ")}`);
+
+                if (letra === null || letra === "") {
+                    alert("Por favor, introduce una letra válida.");
+                    continue;
+                }
+
+                letra = letra.toLowerCase();
+
+                if (letra.length !== 1 || !/[a-zA-Z]/.test(letra)) {
+                    alert("Por favor, introduce una sola letra.");
+                    continue;
+                }
+
+                if (adivinadas.includes(letra) || noAdivinadas.includes(letra)) {
+                    alert("Ya has intentado con esta letra antes.");
+                    continue;
+                }
+
+                if (palabra.includes(letra)) {
+                    for (let i = 0; i < palabra.length; i++) {
+                        if (palabra[i] === letra) {
+                            palabraOculta[i] = letra;
+                        }
+                    }
+
+                    if (palabraOculta.join("") === palabra) {
+                        alert(`¡Felicidades! Has adivinado la palabra: ${palabra}`);
+                        return;
+                    }    
+
+                    adivinadas.push(letra);
+                } else {
+                    vidas--;
+                    noAdivinadas.push(letra);
+                }
+            }
+
+            if (vidas === 0) {
+                alert(`¡Has perdido! La palabra era: ${palabra}`);
+            }
+        }
+
+
+        var palabra = palabras[Math.floor(Math.random() * palabras.length)]
+        
+        jugarAhorcado(palabra.toLowerCase());
+    </script>
+</body>
+</html>
