@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>    
+        const fechaActual = Date.now();
+
+        const fecha31dic = new Date(fechaActual.getFullYear(), 11, 31, 23, 59, 59, 999);
+        document.write("Los milisegundos restantes son " + (fecha31dic - fechaActual) + " Ms")
+    </script>
+</body>
+</html>
