@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Array numeros</title>
+</head>
+<body>
+    <div id="array"></div>
+    <br><br>
+
+    <button id="insertafinal">Inserta valor al final</button>
+    <br>
+    <button id="insertaprincipio">Inserta valor al principio</button>
+    <br>
+    <button id="eliminafinal">Elimina valor al final</button>
+    <br>
+    <button id="eliminaprincipio">Elimina valor al principio</button>
+    <br>
+    <button id="ordenasc">Ordena ascentemente</button>
+    <br>
+    <button id="ordendesc">Ordena descentemente</button>
+    <br>
+    <script>
+        var miArray = [];
+        var div = document.getElementById("array");
+
+        function updateArrayDisplay() {
+            div.innerHTML = miArray.join(' - ');
+        }
+
+        document.getElementById("insertafinal").addEventListener("click", function() {
+            var random = Math.floor(Math.random() * 1000) + 1;
+            miArray.push(random);
+            updateArrayDisplay();
+        });
+
+        document.getElementById("insertaprincipio").addEventListener("click", function() {
+            var random = Math.floor(Math.random() * 1000) + 1;
+            miArray.unshift(random);
+            updateArrayDisplay();
+        });
+
+        document.getElementById("eliminafinal").addEventListener("click", function() {
+            miArray.pop();
+            updateArrayDisplay();
+        });
+
+        document.getElementById("eliminaprincipio").addEventListener("click", function() {
+            miArray.shift();
+            updateArrayDisplay();
+        });
+
+        document.getElementById("ordenasc").addEventListener("click", function() {
+            // miArray.sort();
+
+            miArray.sort(function(a, b){return a - b});
+            updateArrayDisplay();
+        });
+
+        document.getElementById("ordendesc").addEventListener("click", function() {
+            // miArray.sort();
+            // miArray.reverse();
+
+            miArray.sort(function(a, b){return b - a});
+
+            updateArrayDisplay();
+        });
+
+
+
+    </script>
+</body>
+</html>
