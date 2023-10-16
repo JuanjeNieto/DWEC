@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function esPrimo(num) {
+            if (num <= 1) {
+                return false;
+            } else if (num <= 3) {
+                return true;
+            } else if (num % 2 === 0 || num % 3 === 0) {
+                return false;
+            }
+
+            let i = 5;
+            while (i * i <= num) {
+                if (num % i === 0 || num % (i + 2) === 0) {
+                    return false;
+                }
+                i += 6;
+            } 
+
+            return true;
+        }
+
+        
+        var num = prompt("Introduce un numero");
+        num = parseInt(num); 
+
+        if (esPrimo(num)) {
+            alert(num + " es primo.");
+        } else {
+            alert(num + " no es primo.");
+        }
+    </script>
+</body>
+</html>
