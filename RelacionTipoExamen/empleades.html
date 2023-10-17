@@ -8,7 +8,7 @@
 <body>
     <script>
 
-let arrayEmpleado = [{
+    let arrayEmpleado = [{
         nombre: "Juan José",
         edad: 20,
         guardia: true,
@@ -49,7 +49,7 @@ let arrayEmpleado = [{
         edad: 25,
         guardia: false,
         pais: "México",
-        area: "Front-end",
+        area: "Frontend",
         puesto: "Web Developer",
         sueldo: 1800,
         lenguajes: ["HTML", "CSS", "JavaScript"],
@@ -61,7 +61,7 @@ let arrayEmpleado = [{
         edad: 35,
         guardia: true,
         pais: "Argentina",
-        area: "Back-end",
+        area: "Backend",
         puesto: "Software Engineer",
         sueldo: 2500,
         lenguajes: ["Java", "Python", "SQL"],
@@ -69,6 +69,69 @@ let arrayEmpleado = [{
     }]
 
 
+        // filter por guardia
+        function empleadesQueHacenGuardia(empleades) {
+          const empleadesGuardia = empleades.filter((empleado) => {
+            return empleado.guardia === true;
+        });
+        
+          return empleadesGuardia;
+        }
+        
+        const empleadosGuardia = empleadesQueHacenGuardia(arrayEmpleado)
+        document.write("Empleados que hacen guardia <br>"+ JSON.stringify(empleadosGuardia))
+
+        document.write("<br><br>")
+
+         // 2. filter de pais
+
+        function empleadesPorPais(empleades, pais) {
+            var pais
+            const empleadesPais = empleades.filter((empleado) => {
+                return empleado.pais === pais;
+            })
+
+            return empleadesPais;
+        }
+        var pais = "España"
+
+        const empleadesPais = empleadesPorPais(arrayEmpleado, pais)
+
+        document.write("Empleados de " + pais + ": <br> " + JSON.stringify(empleadesPais))
+
+        document.write("<br><br>")
+
+        // 3. filter de area
+
+        function empleadesPorArea(empleades, area) {
+            const empleadesArea = empleades.filter((empleado) => {
+                return empleado.area === area;
+            })
+
+            return empleadesArea;
+        }
+        var area = "Backend"
+
+        const empleadesArea = empleadesPorArea(arrayEmpleado, area)
+
+        document.write("Empleados de " + area + ": <br> " + JSON.stringify(empleadesArea))
+
+        document.write("<br><br>")
+
+        // 4. sueldo mayor a cierta cantidad
+
+        function empleadesConSueldoMayorA (empleades, sueldo) {
+            const empleadesSueldoMayorA = empleades.filter((empleado) => {
+                return empleado.sueldo > sueldo;
+            })
+
+            return empleadesSueldoMayorA;
+        }
+
+        var sueldoMinimo = 1500;
+        const empleadesSueldoMayor = empleadesConSueldoMayorA(arrayEmpleado, sueldoMinimo)
+
+        document.write("Los que tienen sueldo mayor a "+ sueldoMinimo +": " + JSON.stringify(empleadesSueldoMayor))
     </script>
 </body>
 </html>
