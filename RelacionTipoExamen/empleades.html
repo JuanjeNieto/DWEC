@@ -124,7 +124,6 @@
             const empleadesSueldoMayorA = empleades.filter((empleado) => {
                 return empleado.sueldo > sueldo;
             })
-
             return empleadesSueldoMayorA;
         }
 
@@ -132,6 +131,35 @@
         const empleadesSueldoMayor = empleadesConSueldoMayorA(arrayEmpleado, sueldoMinimo)
 
         document.write("Los que tienen sueldo mayor a "+ sueldoMinimo +": " + JSON.stringify(empleadesSueldoMayor))
+
+        document.write("<br><br>")
+
+        //5. empleades con mas lenguajes
+
+        function empleadesConMasLenguajes(empleades, numeroLenguajes) {
+            const empleadesConMasDe = empleades.filter((empleado) => {
+            return empleado.lenguajes.length > numeroLenguajes;
+            });
+            return empleadesConMasDe;
+        }
+        var lenguajesMinimo = 3;
+
+        const empleadesConMasLeng = empleadesConMasLenguajes(arrayEmpleado, lenguajesMinimo)
+
+        document.write("Los que tienen mas lenguajes de "+ lenguajesMinimo +": " + JSON.stringify(empleadesConMasLeng))
+
+        document.write("<br><br>")
+
+        // media sueldo empleados
+
+        function sueldoPromedioEmpleades(empleades){
+            const mediaSueldos = empleades.reduce(empleado.sueldo) / empleades.length;
+
+            return mediaSueldos;
+        }
+         mediaSueldosEmpleados = sueldoPromedioEmpleades(arrayEmpleado);
+        document.write("la media es " + JSON.stringify(mediaSueldosEmpleados))
+
     </script>
 </body>
 </html>
