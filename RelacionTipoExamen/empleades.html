@@ -27,7 +27,7 @@
         pais: "España",
         area: "Frontend",
         puesto: "Designer",
-        sueldo: 1033,
+        sueldo: 1333,
         lenguajes: ["CSS", "Bootstrap", "JS"],
         seniority: "Junior",
     },
@@ -39,7 +39,7 @@
         pais: "España",
         area: "Designer",
         puesto: "Developer",
-        sueldo: 2230,
+        sueldo: 2030,
         lenguajes: ["C#", "Java", "JS", "CSS"],
         seniority: "Senior",
     },
@@ -153,7 +153,8 @@
         // media sueldo empleados
 
         function sueldoPromedioEmpleades(empleades){
-            const mediaSueldos = empleades.reduce(empleado.sueldo) / empleades.length;
+            const totalSueldos = empleades.reduce((acumulador, empleado) => acumulador + empleado.sueldo, 0);
+            const mediaSueldos = totalSueldos / empleades.length;
 
             return mediaSueldos;
         }
