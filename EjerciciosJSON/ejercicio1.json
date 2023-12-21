@@ -1,0 +1,13 @@
+{
+    "id": 33,
+    "nombre": "Antonio",
+    "aprobado": false,
+    "primitiva": [2, 5, 13, 18, 24],
+    "coche":
+    {
+        "marca": "Seat",
+        "modelo": "Ibiza",
+        "matricula": "1985FRL"
+    },
+    "nulo":null
+}
