@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,18 @@
 </head>
 <body>
     <div id="demo"></div>
-    <script></script>
+    <script>
+        const myObj = 
+        { 
+            nombre: "Mario", 
+            apellidos: "Sánchez López", 
+            edad: 26, 
+            curso: "DAW2", 
+            asignatura: "DEWC", 
+            ciudad: "El Puerto de Santa María" 
+        }
+        const myJSON = JSON.stringify(myObj);
+        window.location = "demo_json.php?x=" + myJSON;
+    </script>
 </body>
 </html>
