@@ -32,5 +32,13 @@
         <a href="http://prueba5">Sed non lectus non est pellentesque</a>
         auctor.
     </p>
+    <script>
+        var nEnlaces = document.getElementsByTagName("a");
+        var element = 0;
+        for (let i = 0; i < nEnlaces.length; i++) {
+            element += i;
+        }
+        console.log(element);
+    </script>
 </body>
 </html>
