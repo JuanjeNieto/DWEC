@@ -33,12 +33,40 @@
         auctor.
     </p>
     <script>
+
+        // Parte 1
         var nEnlaces = document.getElementsByTagName("a");
-        var element = 0;
-        for (let i = 0; i < nEnlaces.length; i++) {
-            element += i;
+        
+        const longitudEnlaces = nEnlaces.length;
+        console.log(longitudEnlaces);
+
+        // Parte 2
+
+        var enlaces = document.getElementsByTagName('a')
+
+        const penultimoHref = enlaces[enlaces.length - 2]
+        const direccionPen = penultimoHref.getAttribute('href')
+        console.log(direccionPen);
+
+        // parte 3
+        const enlaces_pt3 = document.querySelectorAll('a');
+        let contador = 0;
+        const enlace = "http://prueba";
+
+        enlaces_pt3.forEach(
+            (enlace) => 
+            {
+            const direccion = enlace.getAttribute('href');
+
+            if (direccion === enlace) {
+            contador++;
+            }
+        
         }
-        console.log(element);
+        
+        )
+
+        console.log(contador)
     </script>
 </body>
 </html>
