@@ -49,24 +49,31 @@
         console.log(direccionPen);
 
         // parte 3
-        const enlaces_pt3 = document.querySelectorAll('a');
-        let contador = 0;
-        const enlace = "http://prueba";
-
-        enlaces_pt3.forEach(
-            (enlace) => 
-            {
-            const direccion = enlace.getAttribute('href');
-
-            if (direccion === enlace) {
-            contador++;
-            }
         
+        var contadorEnlaces = 0;
+        for (let i = 0; i < enlaces.length; i++) {
+            if (enlaces[i].getAttribute('href') === "http://prueba") {
+                contadorEnlaces++;
+            } 
         }
-        
-        )
+        console.log(contadorEnlaces)
 
-        console.log(contador)
+        // parte 4
+
+        // necesitamos crear otro array de parrafos, para asi ver solo el tercero (parrafos[2])
+
+        var parrafos = document.getElementsByTagName("p");
+        var tercerParrafo = parrafos[2];
+        var enlacesTercerParrafo = tercerParrafo.getElementsByTagName("a");
+
+       var nuevoContador = 0;
+       for (let i = 0; i < enlacesTercerParrafo.length; i++) {
+        nuevoContador++;
+        
+       }
+       console.log(nuevoContador)
+
+
     </script>
 </body>
 </html>
