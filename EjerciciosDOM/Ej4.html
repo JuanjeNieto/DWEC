@@ -16,4 +16,13 @@
     </ul>
     <input type="button" value="Añadir elemento" onclick="anade();">
 </body>
+<script>
+    function anade() {
+        var node = document.createElement("LI");
+        var textnode = document.createTextNode("Nuevo elemento");
+        node.appendChild(textnode);
+        document.getElementById("lista").appendChild(node);
+    }
+
+</script>
 </html>

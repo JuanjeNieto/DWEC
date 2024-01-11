@@ -14,10 +14,22 @@
 	<p>5. Distinctio quas, impedit inventore quod! Incidunt ab in, quidem deleniti repellendus odit quisquam, quis pariatur, doloribus adipisci culpa nesciunt! Vero, soluta maxime provident minus voluptates esse, distinctio culpa labore deserunt.</p>
 
 <script>
+	var parrafos = document.getElementsByTagName('p');
 //que en el tercer párrafo haya un enlace con el texto "+ info" creado con javacript y que enlace a http://www.iesromerovargas.com/
+	var tercerParrafo = parrafos[2];
+	var node = document.createElement("a")
+	var textnode = document.createTextNode("+ info")
+	node.appendChild(textnode);
+	node.href = "http://www.iesromerovargas.com/";
+	tercerParrafo.appendChild(node);
 
 
 //inserta un párrafo de color rojo entre el tercer y el cuarto párrafos
+	var newparrafo = document.createElement("p")
+	var textoparrafo = document.craeteTextNode(" Riqueza, fama, poder. Gold Roger, el Rey de los Piratas, logró todo lo que este mundo tiene para ofrecer. Y así, muchos hombres se dirigen a Grand Line para encontrar el gran tesoro que dejó, el One Piece. ¡El mundo ha entrado verdaderamente en una Gran Era Pirata! ¡Con el sombrero de paja que le juró el gran pirata, Shanks, Monkey D. Luffy se dirige al mar en un viaje por la carretera para convertirse en el Rey de los Piratas!")
+	newparrafo.appendChild(textoparrafo);
+	document.body.style.color='#FF0000';
+	tercerParrafo.after(newparrafo);
 
 
 //elimina el segundo párrafo [1]	

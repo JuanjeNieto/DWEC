@@ -15,4 +15,15 @@
     </p>
     <a class="enlace" href="#" onclick="muestra(); return false;">Seguir leyendo</a>
 </body>
+<script>
+    var adicional = document.querySelector(".adicional");
+    var enlace = document.querySelector(".enlace");
+    adicional.style.display= "none";
+   
+        function muestra(){
+       
+        adicional.style.display = "inline";
+        enlace.style.display = "none";
+    }
+</script>
 </html>
