@@ -13,6 +13,10 @@
 	<p>4. Vero aperiam, ipsum unde doloribus minima ab, sint nulla molestiae autem dicta ad laborum voluptas labore et officia sapiente voluptatibus perferendis voluptatem optio veritatis placeat consequatur aspernatur? Corporis, impedit, pariatur.</p>
 	<p>5. Distinctio quas, impedit inventore quod! Incidunt ab in, quidem deleniti repellendus odit quisquam, quis pariatur, doloribus adipisci culpa nesciunt! Vero, soluta maxime provident minus voluptates esse, distinctio culpa labore deserunt.</p>
 
+
+	
+</body>
+
 <script>
 	var parrafos = document.getElementsByTagName('p');
 //que en el tercer párrafo haya un enlace con el texto "+ info" creado con javacript y que enlace a http://www.iesromerovargas.com/
@@ -24,18 +28,24 @@
 	tercerParrafo.appendChild(node);
 
 
-//inserta un párrafo de color rojo entre el tercer y el cuarto párrafos
-	var newparrafo = document.createElement("p")
-	var textoparrafo = document.craeteTextNode(" Riqueza, fama, poder. Gold Roger, el Rey de los Piratas, logró todo lo que este mundo tiene para ofrecer. Y así, muchos hombres se dirigen a Grand Line para encontrar el gran tesoro que dejó, el One Piece. ¡El mundo ha entrado verdaderamente en una Gran Era Pirata! ¡Con el sombrero de paja que le juró el gran pirata, Shanks, Monkey D. Luffy se dirige al mar en un viaje por la carretera para convertirse en el Rey de los Piratas!")
+// Crear un párrafo de color rojo entre el tercer y cuarto párrafos
+	var newparrafo = document.createElement("p");
+	var textoparrafo = document.createTextNode(" Riqueza, fama, poder. Gold Roger, el Rey de los Piratas, logró todo lo que este mundo tiene para ofrecer. Y así, muchos hombres se dirigen a Grand Line para encontrar el gran tesoro que dejó, el One Piece. ¡El mundo ha entrado verdaderamente en una Gran Era Pirata! ¡Con el sombrero de paja que le juró el gran pirata, Shanks, Monkey D. Luffy se dirige al mar en un viaje por la carretera para convertirse en el Rey de los Piratas!");
 	newparrafo.appendChild(textoparrafo);
-	document.body.style.color='#FF0000';
-	tercerParrafo.after(newparrafo);
+	newparrafo.style.color = '#FF0000';
+
+	// Obtener referencia al cuarto párrafo
+	var cuartoParrafo = document.getElementsByTagName("p")[3];
+
+	// Insertar el nuevo párrafo justo antes del cuarto párrafo
+	cuartoParrafo.parentNode.insertBefore(newparrafo, cuartoParrafo);
+
 
 
 //elimina el segundo párrafo [1]	
 
+	var segundoParrafo = parrafos[1];
+	segundoParrafo.parentNode.removeChild(segundoParrafo)
 
 </script>
-	
-</body>
 </html>
