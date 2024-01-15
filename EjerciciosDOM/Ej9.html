@@ -18,5 +18,13 @@
       <span id="resultado">50</span>
     </p>
   </body>
-  
+  <script>
+    let resultado = document.getElementById("resultado")
+    let letra = document.getElementById("comentarios");
+    resultado.addEventListener('keyup', mostrar)
+
+    function mostrar(e) {
+      letra.textContent += `${e.code}  `
+    }
+  </script>
   </html>

@@ -34,5 +34,54 @@
     </p>
     <p id="resultado2"></p>
 </body>
+<script>
+    document.getElementById("calculo").addEventListener("click", function() {
+      var valor1 = parseFloat(document.getElementById("valor1").value);
+      var valor2 = parseFloat(document.getElementById("valor2").value);
+      var operacion = document.getElementById("operacion").value;
+      var resultadoElement = document.getElementById("resultado1");
+
+      var resultado = 0;
+  
+      if (operacion === "suma") {
+        resultado = valor1 + valor2;
+      } else if (operacion === "resta") {
+        resultado = valor1 - valor2;
+      }
+  
+      resultadoElement.textContent = "Resultado: " + resultado;
+    });
+  
+    document.getElementById("calculomultiple").addEventListener("click", function() {
+      var valor1 = parseFloat(document.getElementById("valor1").value);
+      var valor2 = parseFloat(document.getElementById("valor2").value);
+      var operacionesSelect = document.getElementById("operaciones");
+      var resultadoElement = document.getElementById("resultado2");
+
+      var resultados = [];
+  
+      for (var i = 0; i < operacionesSelect.options.length; i++) {
+        if (operacionesSelect.options[i].selected) {
+          var operacion = operacionesSelect.options[i].value;
+          var resultado = 0;
+  
+          if (operacion === "suma") {
+            resultado = valor1 + valor2;
+          } else if (operacion === "resta") {
+            resultado = valor1 - valor2;
+          }
+  
+          resultados.push(operacion + ": " + resultado);
+        }
+      }
+  
+      if (resultados.length > 0) {
+        resultadoElement.textContent = "Resultados: " + resultados.join(", ");
+      } else {
+        resultadoElement.textContent = "Seleccione al menos una operación.";
+      }
+    });
+  </script>
+  
 
 </html>

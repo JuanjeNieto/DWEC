@@ -27,5 +27,32 @@
   <p id="resultado"></p>
   
 </body>
+<script>
+  document.getElementById("calculo").addEventListener("click", function() {
+    var valor1 = parseFloat(document.getElementById("valor1").value);
+    var valor2 = parseFloat(document.getElementById("valor2").value);
+    var sumaCheckbox = document.getElementById("suma").checked;
+    var restaCheckbox = document.getElementById("resta").checked;
+    var resultadoElement = document.getElementById("resultado");
+
+    var resultado = 0;
+
+    if (sumaCheckbox) {
+      resultado = valor1 + valor2;
+    }
+
+    if (restaCheckbox) {
+      if (sumaCheckbox) {
+        // Si ambos checkboxes están marcados, restar también el segundo valor
+        resultado = "Suma: " + (valor1+valor2) + ". Resta: " + (valor1-valor2);
+      } else {
+        // Si solo está marcado el checkbox de resta, restar solo el segundo valor
+        resultado = valor1 - valor2;
+      }
+    }
+
+    resultadoElement.textContent = "Resultado: " + resultado;
+  });
+</script>
 
 </html>
