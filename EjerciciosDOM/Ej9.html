@@ -19,12 +19,17 @@
     </p>
   </body>
   <script>
-    let resultado = document.getElementById("resultado")
-    let letra = document.getElementById("comentarios");
-    resultado.addEventListener('keyup', mostrar)
+    
+    var textarea = document.getElementById("comentarios");
+    var contadorSpan = document.getElementById("resultado");
 
-    function mostrar(e) {
-      letra.textContent += `${e.code}  `
-    }
+    textarea.addEventListener("input", function() {
+        var maxLength = parseInt(textarea.getAttribute("maxlength"));
+        var caracteresIngresados = textarea.value.length;
+        var caracteresRestantes = maxLength - caracteresIngresados;
+
+        contadorSpan.textContent = caracteresRestantes;
+    });
+    
   </script>
   </html>

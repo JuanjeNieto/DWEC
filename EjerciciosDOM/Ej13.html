@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="submit">Generate checkbox</button>
+
+    <script>
+        document.getElementById('submit').onclick = function() {
+            for (let i = 0; i < 100; i++) {
+                    var numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+                var checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.value = numeroAleatorio;
+                var label = document.createElement('label');
+                label.textContent =  + numeroAleatorio;
+
+                document.body.appendChild(checkbox);
+                document.body.appendChild(label);
+            }
+                
+            }
+    </script>
+</body>
+</html>
