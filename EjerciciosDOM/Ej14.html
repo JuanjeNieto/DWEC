@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej14</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, repudiandae.</p>
+    <p>Aspernatur vitae rerum magni reiciendis autem illo voluptatem necessitatibus commodi.</p>
+    <p>Quos nemo tempora natus necessitatibus, nesciunt facilis voluptatum sit. Iure?</p>
+</body>
+<script>	
+    var parrafos = document.getElementsByTagName('p');
+    var estado = false;
+
+    for (let i = 0; i < parrafos.length; i++) {
+        parrafos[i].onclick = function() {
+            
+            
+
+            // Ocultar o mostrar el párrafo según el estado
+            if (estado) {
+                this.style.display = "none";
+            } else {
+                this.style.display = "block";
+            }
+        }
+    }
+</script>
+</html>

@@ -6,23 +6,44 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="submit">Generate checkbox</button>
+    <button id="submit">Generar checkbox</button>
+    <button id="select">Seleccionar todo</button>
+    <button id="unselect">Desmarcar todo</button>
 
-    <script>
-        document.getElementById('submit').onclick = function() {
-            for (let i = 0; i < 100; i++) {
-                    var numeroAleatorio = Math.floor(Math.random() * 100) + 1;
-                var checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.value = numeroAleatorio;
-                var label = document.createElement('label');
-                label.textContent =  + numeroAleatorio;
-
-                document.body.appendChild(checkbox);
-                document.body.appendChild(label);
-            }
-                
-            }
-    </script>
+    
 </body>
+<script>
+    document.getElementById('submit').onclick = function() {
+        
+        for (let i = 0; i < 100; i++) {
+                var numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+            var checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = numeroAleatorio;
+            var label = document.createElement('label');
+            label.textContent = numeroAleatorio;
+
+            document.body.appendChild(checkbox);
+            document.body.appendChild(label);
+        }
+            
+        }
+    document.getElementById('select').onclick = function() {
+        var cajitas = document.querySelectorAll('input[type="checkbox"]');
+        for (let i = 0; i < cajitas.length; i++) {
+            cajitas[i].checked = true;
+            
+        }
+        
+    }
+
+    document.getElementById('unselect').onclick = function() {
+        var cajitas = document.querySelectorAll('input[type="checkbox"]');
+        for (let i = 0; i < cajitas.length; i++) {
+            cajitas[i].checked = false;
+            
+        }
+        
+    }
+</script>
 </html>
