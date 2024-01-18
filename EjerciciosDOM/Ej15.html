@@ -45,6 +45,17 @@
             // Incrementar el contador
             contadorResaltado++;
         });
+
+        // Obtener todos los elementos con la clase "resaltado"
+        var resaltados = document.querySelectorAll('.resaltado');
+
+        // Iterar sobre los elementos resaltados y mostrar el contador
+        resaltados.forEach(function(elemento) {
+            var contador = elemento.getAttribute('data-contador');
+            var contadorSpan = document.createElement('span');
+            contadorSpan.textContent = '(' + contador + ') ';
+            elemento.insertBefore(contadorSpan, elemento.firstChild);
+        });
     </script>
 </body>
 </html>

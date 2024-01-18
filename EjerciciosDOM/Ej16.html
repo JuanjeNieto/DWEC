@@ -7,11 +7,31 @@
     <title>Ej 16</title>
     <script type="text/javascript">
         function genera() {
-        
+            // Genera números aleatorios entre 1 y 100
+            var numero1 = Math.floor(Math.random() * 100) + 1;
+            var numero2 = Math.floor(Math.random() * 100) + 1;
+
+            // Muestra los números generados en los divs correspondientes
+            document.getElementById("primero").textContent = numero1;
+            document.getElementById("segundo").textContent = numero2;
+
+            // Limpia el resultado anterior
+            document.getElementById("resultado").textContent = "";
         }
-        
+
         function compara() {
-        
+            // Obtiene los números generados
+            var numero1 = parseInt(document.getElementById("primero").textContent);
+            var numero2 = parseInt(document.getElementById("segundo").textContent);
+
+            // Compara los números y muestra el resultado en el div correspondiente
+            if (numero1 > numero2) {
+                document.getElementById("resultado").textContent = ">";
+            } else if (numero1 < numero2) {
+                document.getElementById("resultado").textContent = "<";
+            } else {
+                document.getElementById("resultado").textContent = "=";
+            }
         }
     </script>
         
