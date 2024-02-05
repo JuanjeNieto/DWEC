@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obtenerEmpleadoMejorRemunerado = () => {
+        let empleadoMejorRemunerado = { nombre: '', sueldo: 0 };
+    
+        for (let i = 1; i <= 8; i++) {
+            const nombreEmpleado = prompt(`Ingrese el nombre del empleado ${i}:`);
+            const sueldoEmpleado = parseFloat(prompt(`Ingrese el sueldo de ${nombreEmpleado}:`));
+    
+            empleadoMejorRemunerado.nombre = nombreEmpleado;
+            empleadoMejorRemunerado.sueldo = sueldoEmpleado;
+            
+        }
+    
+        return empleadoMejorRemunerado;
+    };
+    
+    const mejorRemunerado = obtenerEmpleadoMejorRemunerado();
+    
+    alert(`El empleado mejor remunerado es ${mejorRemunerado.nombre} con un sueldo de ${mejorRemunerado.sueldo}`);
+    
+    </script>
+</body>
+</html>
