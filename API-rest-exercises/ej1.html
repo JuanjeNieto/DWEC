@@ -10,25 +10,16 @@
   <ul id="character-list"></ul>
 
   <script>
-    // Fetch characters from Star Wars API
+   
     fetch('https://swapi.dev/api/people/')
       .then(response => response.json())
       .then(data => {
         const characterList = document.getElementById('character-list');
 
-        // Function to fetch planet details for each character
-        const fetchPlanetDetails = async (url) => {
-          const response = await fetch(url);
-          const planetData = await response.json();
-          return planetData.name;
-        };
-
-        // Loop through characters and fetch planet details for each
-        data.results.forEach(async character => {
+        data.results.forEach(character => {
           const listItem = document.createElement('li');
-          const planetName = await fetchPlanetDetails(character.homeworld);
 
-          listItem.textContent = `Nombre: ${character.name}, Año: ${character.birth_year}, Planeta: ${planetName}`;
+          listItem.textContent = `Nombre: ${character.name}, Año: ${character.birth_year}`;
           characterList.appendChild(listItem);
         });
       })
