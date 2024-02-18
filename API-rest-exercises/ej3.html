@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2>Doxxeame</h2>
+<button onclick="obtenIP()">Obtener datos</button>
+<div id="geoIPData"></div>
+
+<script>
+    function obtenIP() {
+    fetch('http://ip-api.com/json/')
+        .then(response => response.json())
+        .then(data => {
+            const geoIPData = document.getElementById('geoIPData');
+            geoIPData.innerHTML = `
+            <p><strong>País:</strong> ${data.country}</p>
+            <p><strong>Ciudad:</strong> ${data.city}</p>
+            <p><strong>Código Postal:</strong> ${data.zip}</p>
+            <p><strong>IP:</strong> ${data.query}</p>
+          `;
+        })
+        .catch(error => console.error('Error fetching data:', error));
+}
+</script>
+</body>
+</html>

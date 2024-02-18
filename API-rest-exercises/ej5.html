@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+</head>
+<body>
+    <h2>User Information</h2>
+    <div id="userDetails"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://randomuser.me/api/')
+            .then(response => response.json())
+            .then(data => {
+                const user = data.results[0];
+                const userDetails = document.getElementById('userDetails');
+                const gender = user.gender;
+                const firstName = user.name.first;
+                const lastName = user.name.last;
+
+                userDetails.innerHTML = `
+                    <p><strong>First Name:</strong> ${firstName}</p>
+                    <p><strong>Last Name:</strong> ${lastName}</p>
+                    <img src="${gender === 'male' ? 'hombre.png' : 'mujer.png'}" alt="User Image">
+                `;
+            })
+            .catch(error => {
+                console.error('Error fetching user data:', error);
+            });
+        });
+    </script>
+</body>
+</html>

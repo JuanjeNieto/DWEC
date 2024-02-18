@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data Retrieval</title>
+</head>
+<body>
+    <h2>Retrieve User Data</h2>
+    <form id="userForm">
+        <label for="userId">Enter User ID (1-10):</label>
+        <input type="number" id="userId" min="1" max="10" required>
+        <button type="submit">Get User Data</button>
+    </form>
+
+    <div id="userData"></div>
+
+    <script>
+        document.getElementById('userForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const userId = document.getElementById('userId').value;
+
+            fetch(`https://jsonplaceholder.typicode.com/users?id=${userId}`)
+            .then(response => response.json())
+            .then(data => {
+                const userData = document.getElementById('userData');
+
+                if (data.length > 0) {
+                    const user = data[0];
+                    userData.innerHTML = `
+                        <h3>User Data</h3>
+                        <p><strong>ID:</strong> ${user.id}</p>
+                        <p><strong>Name:</strong> ${user.name}</p>
+                        <p><strong>Username:</strong> ${user.username}</p>
+                        <p><strong>Email:</strong> ${user.email}</p>
+                        <p><strong>Address:</strong> ${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}</p>
+                        <p><strong>Phone:</strong> ${user.phone}</p>
+                        <p><strong>Website:</strong> ${user.website}</p>
+                        <p><strong>Company:</strong> ${user.company.name}</p>
+                    `;
+                } else {
+                    userData.innerHTML = '<p>User not found.</p>';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching user data:', error);
+            });
+        });
+    </script>
+</body>
+</html>
